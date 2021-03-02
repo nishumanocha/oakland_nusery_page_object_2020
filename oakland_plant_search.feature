@@ -6,7 +6,7 @@ Feature: oakland plant search
     Given user is on plant search page
     When user search for the plant Rose
     Then user should see the results related for Rose
-    And verify the search results count is not more than 10
+    And verify the search results count is not more than 5
 
   Scenario Outline: verify the user can search for different plants
     Given user is on plant search page
@@ -35,8 +35,6 @@ Feature: oakland plant search
       | plant_name | no_of_results |
       | Rose       | 10            |
       | Sunflower  | 10            |
-
-
 
 
   Scenario: verify user can add the plants to wishlist
