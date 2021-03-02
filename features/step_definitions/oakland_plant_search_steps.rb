@@ -98,8 +98,8 @@ Then(/^user can modified the quantity in the wish list$/) do
   # on(OakWishListPage).verify_wishlist_quantity_has_updated 2
   # OR
   on(OakWishListPage) do |page|
-    page.update_wishlist_quantity 2
-    page.verify_wishlist_quantity_has_updated 2
+    page.update_wishlist_quantity 3
+    page.verify_wishlist_quantity_has_updated 3
   end
   #OR
   plant_name = 'Rose'
