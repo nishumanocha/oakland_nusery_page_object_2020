@@ -68,13 +68,13 @@ Feature: oakland plant search
     Then user should see the results related for Rose
     And verify the search results is not more than 10
 
-  Scenario: Get the plant search details - plant type, plant height, flower height, spread, sunlight
+  Scenario: Get the fruit search details - fruit type, fruit height, flower height, spread, sunlight
     Given user is on plant search page
     When user search for the plant Rose
     Then user should see the results related for Rose
     And get the details of the plant
 
-  Scenario: Verify the plant search details- plant type, plant height, flower height, spread, sunlight are correct
+  Scenario: Verify the fruit search details- fruit type, plant height, flower height, spread, sunlight are correct
     Given user is on plant search page
     When user search for the plant Rose
     Then user should see the results related for Rose
