@@ -117,3 +117,37 @@ Then(/^user can modified the quantity in the wish list$/) do
     Then verify user can see the updated quantity
 }
 end
+
+When(/^user verifies data can be read from yml file$/) do
+  # file_path = 'features/support/test data/test_data.yml'
+  # test_data = YAML.load_file file_path
+  p $test_data['language_name']
+  p $test_data['chase']['id']
+  p 'change the data'
+  $test_data['chase'][id] = 500
+  p $test_data['chase'][id]
+
+  file.open($file_path, 'w') { |f|
+    $test_data['chase']['id'] = 1000
+    f.write($test_data.to_yaml)
+  }
+  p $test_data['chase']['id']
+  p 'done'
+end
+
+# test_data['chase']['id']
+# test_data.fetch('language_name')
+# test_data['chase']['id'] = 400
+# test_data['chase']['id']
+# Moved the above code to env.rb for reloading the file automatically
+And(/^verify the details of the (.*) are correct$/) do |plant_name|
+  p $test_data[plant_name]['plant_name']
+
+
+  # table is a table.hashes.keys # => [:plant_details, :plant_values]
+  actual_plant_details = on(OakPlantSearchPage).get_plant_info
+  expected_plant_details = $test_data[plant_name]
+
+  expect(expected_plant_details.sort).should eql? actual_plant_details.sort
+end
+  p 'done'
