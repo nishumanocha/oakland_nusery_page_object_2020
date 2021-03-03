@@ -84,3 +84,11 @@ Feature: oakland plant search
       | Spreed        | 24 inches    |
       | Sunlight      | full sun     |
 
+Scenario: verify the yml test data functionality
+  When user verifies data can be read from yml file
+
+  Scenario: Verify the plant search details- plant type, plant height, flower height, spread, sunlight are correct using Yml
+    Given user is on plant search page
+    When user search for the plant Rose
+    Then user should see the results related for Rose
+    And verify the details of the Rose are correct
