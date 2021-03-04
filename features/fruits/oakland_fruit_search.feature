@@ -1,40 +1,42 @@
-Feature: oakland plant search
+Feature: oakland Fruit search
 #Background:
-#  Given user is on plant search page
+#  Given user is on fruit search page
 
-  Scenario: verify the user can search for the plant
-    Given user is on plant search page
-    When user search for the plant Rose
+  Scenario: verify the user can search for the fruits
+    Given user is on fruit search page
+    When user search for the fruit Rose
     Then user should see the results related for Rose
-    And verify the search results count is not more than 5
+    And verify the search results count is not more than 10
 
-  Scenario Outline: verify the user can search for different plants
-    Given user is on plant search page
-    When user search for the plant <plant_name>
-    Then user should see the results related for <plant_name>
+  Scenario Outline: verify the user can search for different fruits
+    Given user is on fruit search page
+    When user search for the fruit <fruit_name>
+    Then user should see the results related for <fruit_name>
     And verify the search results count is not more than <no_of_results>
 
     Examples:
-      | plant_name | no_of_results |
+      | fruit_name | no_of_results |
       | Rose       | 10            |
       | Sunflower  | 10            |
 
   Scenario Outline: verify the user can search for different plants
-    Given user is on plant search page
-    When user search for the plant <plant_name>
-    Then user should see the results related for <plant_name>
+    Given user is on fruit search page
+    When user search for the fruit <fruit_name>
+    Then user should see the results related for <fruit_name>
     And verify the search results count is not more than <no_of_results>
     And verify the header details of the plant
-      | plant_details |
-      | Plant Type    |
-      | Plant Height  |
+      | fruit_details |
+      | fruit Type    |
+      | fruit Height  |
       | Flower Height |
       | Spreed        |
       | Sunlight      |
     Examples:
-      | plant_name | no_of_results |
+      | fruit_name | no_of_results |
       | Rose       | 10            |
       | Sunflower  | 10            |
+
+
 
 
   Scenario: verify user can add the plants to wishlist
@@ -84,11 +86,3 @@ Feature: oakland plant search
       | Spreed        | 24 inches    |
       | Sunlight      | full sun     |
 
-Scenario: verify the yml test data functionality
-  When user verifies data can be read from yml file
-
-  Scenario: Verify the plant search details- plant type, plant height, flower height, spread, sunlight are correct using Yml
-    Given user is on plant search page
-    When user search for the plant Rose
-    Then user should see the results related for Rose
-    And verify the details of the Rose are correct
