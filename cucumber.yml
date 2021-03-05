@@ -1,1 +1,3 @@
 default: --no-source --color --format pretty --format html --out report.html
+regression: --no-source --color --format pretty --format html --out report.html --tags @regression
+smoke: --no-source --color --format pretty --format html --out report.html --tags @smoke

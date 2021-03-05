@@ -10,7 +10,7 @@ Feature: oakland plant search
     Given user is on plant search page
     When user search for the plant Rose
     Then user should see the results related for Rose
-    And verify the search results count is not more than 5
+    And verify the search results count is not more than 10
 
   @regression
   Scenario Outline: verify the user can search for different plants
