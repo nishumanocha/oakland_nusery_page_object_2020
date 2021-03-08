@@ -1,3 +1,12 @@
-default: --no-source --color --format pretty --format html --out report.html
+
+<%
+  html_path = "{Time.now.strftime("%m-%d_%H-%M-%S")}_report.html"
+  env = "#{ENV['browser_type'}}"
+std_opts = "--tags ~@wip --tags ~@manual -r features -r features/support/env.rb"
+%>
+
+
+
+default: --no-source --color --format pretty --format html --out <% = html_path%>
 regression: --no-source --color --format pretty --format html --out report.html --tags @regression
-smoke: --no-source --color --format pretty --format html --out report.html --tags @smoke
+smoke: --no-source --color --format pretty --format html --out <% = html_path%> --tags @smoke
