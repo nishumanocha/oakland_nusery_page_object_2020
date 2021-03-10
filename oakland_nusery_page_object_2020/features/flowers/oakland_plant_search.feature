@@ -5,7 +5,6 @@ Feature: oakland plant search
 #Background:
 #  Given user is on plant search page
 
-  @smoke
   Scenario: verify the user can search for the plant
     Given user is on plant search page
     When user search for the plant Rose
